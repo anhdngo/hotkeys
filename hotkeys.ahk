@@ -1,8 +1,14 @@
 ﻿#Requires AutoHotkey v2.0
 
-; Open Edge with Ctrl + Alt + B
+; Open Edge profile 1 with Ctrl + Alt + B
 ^!b:: {
-    Run "msedge.exe"
+    Run('msedge.exe --profile-directory="Default"')
+}
+
+; Open Edge profile 2 with Ctrl + Alt + Shift + B
+^+!b::
+{
+    Run('msedge.exe --profile-directory="Profile 2"')
 }
 
 ; Open Command Prompt with Ctrl + Alt + T
