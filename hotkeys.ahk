@@ -10,8 +10,17 @@
     Run "cmd.exe"
 }
 
-; Open PowerShell with Ctrl + Alt + Shift + T
+; Open wsl with Ctrl + Alt + Shift + T
 ^+!t:: {
+    Run("cmd /k wsl") ; /k keeps the terminal open after executing the command
+    return
+
+
+}
+
+; Open PowerShell with Ctrl + Alt + Shift + Enter
+^!Enter::
+{
     Run "powershell.exe"
 }
 
@@ -42,4 +51,3 @@ CapsLock:: {
     }
     return
 }
-
