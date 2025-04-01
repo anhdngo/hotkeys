@@ -8,26 +8,24 @@
 ; Open Edge profile 2 with Ctrl + Alt + Shift + B
 ^+!b::
 {
-    Run('msedge.exe --profile-directory="Profile 2"')
+    Run('msedge.exe --profile-directory="Profile 3"')
 }
 
 ; Open Command Prompt with Ctrl + Alt + T
 ^!t:: {
-    Run "cmd.exe"
+	Run("cmd.exe", EnvGet("USERPROFILE"))
 }
 
 ; Open wsl with Ctrl + Alt + Shift + T
 ^+!t:: {
-    Run("cmd /k wsl") ; /k keeps the terminal open after executing the command
+    Run("cmd /k wsl", EnvGet("USERPROFILE")) ; /k keeps the terminal open after executing the command
     return
-
-
 }
 
 ; Open PowerShell with Ctrl + Alt + Shift + Enter
 ^!Enter::
 {
-    Run "powershell.exe"
+    Run("powershell.exe", EnvGet("USERPROFILE"))
 }
 
 ; Launch a new File Explorer window
