@@ -15,17 +15,32 @@
 ^!t:: {
 	Run("cmd.exe", EnvGet("USERPROFILE"))
 }
-
-; Open wsl with Ctrl + Alt + Shift + T
-^+!t:: {
-    Run("cmd /k wsl", EnvGet("USERPROFILE")) ; /k keeps the terminal open after executing the command
-    return
+^!+t::{
+	try {
+        Run('*RunAs cmd.exe')
+    } catch Error {
+        MsgBox("Failed to run as admin.`nError: " Error.Message)
+    }
 }
 
-; Open PowerShell with Ctrl + Alt + Shift + Enter
+
+; Open powershell with Ctrl + Alt + Y
+^!y:: {
+	Run("powershell.exe", EnvGet("USERPROFILE"))
+}
+^!+y::{
+	try {
+        Run('*RunAs powershell.exe')
+    } catch Error {
+        MsgBox("Failed to run as admin.`nError: " Error.Message)
+    }
+}
+
+; Open wsl with Ctrl + Alt + Enter
 ^!Enter::
 {
-    Run("powershell.exe", EnvGet("USERPROFILE"))
+	Run("cmd /k wsl", EnvGet("USERPROFILE")) ; /k keeps the terminal open after executing the command
+    return
 }
 
 ; Launch a new File Explorer window
