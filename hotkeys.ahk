@@ -8,7 +8,7 @@
 ; Open Edge profile 2 with Ctrl + Alt + Shift + B
 ^+!b::
 {
-    Run('msedge.exe --profile-directory="Profile 3"')
+    Run('msedge.exe --profile-directory="Default" -inprivate')
 }
 
 ; Open Command Prompt with Ctrl + Alt + T
