@@ -70,3 +70,14 @@ CapsLock:: {
     }
     return
 }
+
+; Map mouse side buttons to switching desktops
+XButton1::
+{
+    Send("^#{Left}")
+}
+
+XButton2::
+{
+    Send("^#{Right}")
+}
