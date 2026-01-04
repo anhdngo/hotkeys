@@ -2,13 +2,13 @@
 
 ; Open Edge profile 1 with Ctrl + Alt + B
 ^!b:: {
-    Run('msedge.exe --profile-directory="Default"')
+    Run('firefox.exe')
 }
 
 ; Open Edge profile 2 with Ctrl + Alt + Shift + B
 ^+!b::
 {
-    Run('msedge.exe --profile-directory="Default" -inprivate')
+    Run('firefox.exe --private-window')
 }
 
 ; Open Command Prompt with Ctrl + Alt + T
